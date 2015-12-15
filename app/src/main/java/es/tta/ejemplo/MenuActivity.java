@@ -14,6 +14,11 @@ import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity {
 
+    //constantes:
+    public final static String EXTRA_LOGIN= "es.tta.ejemplo.login";
+    public final static String EXTRA_PASSWD= "es.tta.ejemplo.passwd";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);//si has guardado los datos donde se recomienda en el tema 2, te los carga aquí.
@@ -32,7 +37,7 @@ public class MenuActivity extends AppCompatActivity {
 
         Intent intent=getIntent();
         TextView textLogin=(TextView)findViewById(R.id.menu_login);
-        textLogin setText(intent.getStringExtra(MainActivity.EXTRA_LOGIN));
+      //  textLogin setText(intent.getStringExtra(MainActivity.EXTRA_LOGIN));
 
     }
 

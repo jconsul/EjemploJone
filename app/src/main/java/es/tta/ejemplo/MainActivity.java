@@ -10,6 +10,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void login(View view)
     {
-        Intent intent = new Intent(this.MenuActivity.class);
+        Intent intent = new Intent(this,MenuActivity.class);
         EditText editLogin =(EditText)findViewById(R.id.login);//para leer datos
         EditText editPasswd =(EditText)findViewById(R.id.passwd);
         intent.putExtra(EXTRA_LOGIN,editLogin.getText().toString()); //Le podemos meter al intent lo que queramos
@@ -32,10 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void recordAudio(View view)
+    /*public void recordAudio(View view)
     {
         if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_MICROPHONE))
-            Toast.makeText(this, R.string.no_micro, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this.R.string.no_micro, Toast.LENGTH_SHORT).show();
         else
         {
             Intent intent =new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
@@ -53,14 +55,17 @@ public class MainActivity extends AppCompatActivity {
             return;
         switch (requestCode)
         {
-            case READ_REQUEST_CODE;
+            case READ_REQUEST_CODE
+
                 break;
-            case VIDEO_REQUEST_CODE;
+            case VIDEO_REQUEST_CODE
+
                 break;
-            case AUDIO_REQUEST_CODE;
+            case AUDIO_REQUEST_CODE
+
                 sendFile(data.getData());
                 break;
-            case PICTURE_REQUEST_CODE;
+            case PICTURE_REQUEST_CODE
                 sendFile(pictureUri);
                 break;
         }

@@ -9,7 +9,7 @@ import android.view.View;
 
 public class exerciseActivity extends AppCompatActivity {
 
-    @Override
+ /*   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
@@ -24,6 +24,6 @@ public class exerciseActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-    }
+    }*/
 
 }

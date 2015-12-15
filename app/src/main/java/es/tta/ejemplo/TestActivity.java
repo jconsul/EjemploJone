@@ -9,7 +9,7 @@ import android.view.View;
 
 public class TestActivity extends AppCompatActivity {
 
-    @Override
+  /*  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
@@ -22,8 +22,7 @@ public class TestActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-            }
         });
-    }
+    }*/
 
 }
