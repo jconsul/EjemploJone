@@ -9,13 +9,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
-    <TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end" android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -23,6 +17,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:gravity="center"
+            android:textSize="40dp"/>
+        
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +38,7 @@
                 android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Introduce DNI"/>
+                android:hint="@string/login_hint"/>
 
             <TextView
                 android:text="@string/passwd"
@@ -48,7 +49,7 @@
                 android:id="@+id/passwd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/passwd_edit"
+                android:hint="@string/passwd_hint"
                 android:password="true"/>
 
         </GridLayout>
@@ -57,7 +58,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Acceder"
+            android:text="@string/menu_boton_acceder"
             android:onClick="login"/>
 
     </LinearLayout>
