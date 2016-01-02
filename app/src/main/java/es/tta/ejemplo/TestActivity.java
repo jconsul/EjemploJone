@@ -1,10 +1,14 @@
 package es.tta.ejemplo;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -18,8 +22,8 @@ import es.tta.ejemplo.presentacion.Data;
 public class TestActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private int correct=0;//opción correcta
-    private int selected=0; //para saber cual elemos seleccionado
+    private int correct;//opción correcta
+    private int selected; //para saber cual elemos seleccionado
 
 
     @Override
@@ -28,7 +32,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_test);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
+
         Data data=new Data();
         Test test=data.getTest();
         //Test test=new Test();
@@ -48,7 +52,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             radio.setOnClickListener(this);
             group.addView(radio);
         }
-        correct=1;
+        correct=test.getChoice().getCorrect();
 
     }
 
@@ -91,10 +95,22 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     public void showAdvise(View view)
     {
-        Toast.makeText(getApplicationContext(),"Consejo", Toast.LENGTH_LONG).show();
+        String advise="http://artes.uncomo.com/articulo/como-mezclar-colores-17187.html";
+        if (advise.substring(0,10).contains("://"))
+        {
+            Uri uri =Uri.parse(advise);
+            Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+            startActivity(intent);
+        }
+        else
+        {
+            WebView web=new WebView(this);
+            web.loadData(advise, "text/html", null);
+            web.setBackgroundColor(Color.TRANSPARENT);
+            web.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
+            //layout.addView(web);
+
+        }
+
     }
-
-
-
-
 }
