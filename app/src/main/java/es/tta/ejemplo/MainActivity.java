@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,14 +49,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void login(View view)//recogemos los datos del login y lanzamos actividad nueva (MenuActivity)
+    public void login(View view, EditText editLogin, EditText editPasswd )//recogemos los datos del login y lanzamos actividad nueva (MenuActivity)
     {
         Intent intent = new Intent(this,MenuActivity.class);
-        EditText editLogin =(EditText)findViewById(R.id.login);//para leer datos
-        EditText editPasswd =(EditText)findViewById(R.id.passwd);
+       // EditText editLogin =(EditText)findViewById(R.id.login);//para leer datos
+        //EditText editPasswd =(EditText)findViewById(R.id.passwd);
         intent.putExtra(EXTRA_LOGIN,editLogin.getText().toString()); //Le podemos meter al intent lo que queramos
         intent.putExtra(EXTRA_PASSWD, editPasswd.getText().toString());
         startActivity(intent); //Arrancamos la nueva actividad encima de la anterior, que pasará a detenida.
+    }
+
+    public void checkLogin(View view)
+    {
+        EditText editLogin=(EditText)findViewById(R.id.login);
+        String usuario=editLogin.getText().toString();
+        EditText editPasswd =(EditText)findViewById(R.id.passwd);
+        String contrasenia=editPasswd.getText().toString();
+        if(usuario.equalsIgnoreCase("Jone") && contrasenia.equalsIgnoreCase("h") )
+            login(view, editLogin,editPasswd);
+        else
+            Toast.makeText(getApplicationContext(), "Error en el login", Toast.LENGTH_SHORT).show();
+
     }
 
 

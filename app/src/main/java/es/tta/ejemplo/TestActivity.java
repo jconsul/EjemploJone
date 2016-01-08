@@ -66,7 +66,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     {
         RadioGroup group = (RadioGroup) findViewById(R.id.test_choices);
 
-
         int choices = group.getChildCount();
         for(int i=0;i<choices;i++)
         {
@@ -95,21 +94,37 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     public void showAdvise(View view)
     {
-        String advise="http://artes.uncomo.com/articulo/como-mezclar-colores-17187.html";
-        if (advise.substring(0,10).contains("://"))
+
+        RadioGroup group = (RadioGroup) findViewById(R.id.test_choices);
+        if(selected==0)
         {
-            Uri uri =Uri.parse(advise);
-            Intent intent=new Intent(Intent.ACTION_VIEW,uri);
-            startActivity(intent);
+            LinearLayout layout = (LinearLayout)findViewById(R.id.test_layout);
+            String advise1="Has elegido la primera opción. Mezclando amarillo y azul, sale verde";
+            WebView web =new WebView(this);
+            web.loadData(advise1,"text/html",null);
+            web.setBackgroundColor(Color.TRANSPARENT);
+            web.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
+            layout.addView(web);
+
+
         }
         else
         {
-            WebView web=new WebView(this);
-            web.loadData(advise, "text/html", null);
-            web.setBackgroundColor(Color.TRANSPARENT);
-            web.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
-            //layout.addView(web);
+            String advise = "http://artes.uncomo.com/articulo/como-mezclar-colores-17187.html";
+            if (advise.substring(0, 10).contains("://"))
+            {
+                Uri uri = Uri.parse(advise);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            } else
+            {
+                WebView web = new WebView(this);
+                web.loadData(advise, "text/html", null);
+                web.setBackgroundColor(Color.TRANSPARENT);
+                web.setLayerType(WebView.LAYER_TYPE_SOFTWARE, null);
+                //layout.addView(web);
 
+            }
         }
 
     }

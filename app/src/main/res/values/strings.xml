@@ -2,10 +2,11 @@
     <string name="app_name">Ejemplo</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_menu">MenuActivity</string>
+
     <!--strings>MAIN<-->
     <string name="login">Login de usuario</string>
 
-    <string name="login_hint">introduce DNI</string>
+    <string name="login_hint">introduce login</string>
     <string name="user">usuario:</string>
 
     <string name="passwd_hint">introduce la contraseña</string>
