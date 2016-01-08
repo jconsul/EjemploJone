@@ -110,7 +110,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         }
         else
         {
-            String advise = "http://artes.uncomo.com/articulo/como-mezclar-colores-17187.html";
+            String advise = "http://u017633.ehu.eus:18080/static/AndroidManifest.mp4";
             if (advise.substring(0, 10).contains("://"))
             {
                 Uri uri = Uri.parse(advise);

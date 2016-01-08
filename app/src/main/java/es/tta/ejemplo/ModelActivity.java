@@ -1,14 +1,6 @@
 package es.tta.ejemplo;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import java.io.InputStream;
-
-import es.tta.ejemplo.modelo.Business;
-import es.tta.ejemplo.presentacion.Data;
-import es.tta.ejemplo.presentacion.Preferences;
 
 /**
  * Created by jone on 27/12/15.

@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         String usuario=editLogin.getText().toString();
         EditText editPasswd =(EditText)findViewById(R.id.passwd);
         String contrasenia=editPasswd.getText().toString();
-        if(usuario.equalsIgnoreCase("Jone") && contrasenia.equalsIgnoreCase("h") )
+        if(usuario.equalsIgnoreCase("12345678A") && contrasenia.equalsIgnoreCase("tta") )
             login(view, editLogin,editPasswd);
         else
             Toast.makeText(getApplicationContext(), "Error en el login", Toast.LENGTH_SHORT).show();
